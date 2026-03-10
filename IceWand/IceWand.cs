@@ -192,7 +192,7 @@ public class IceWand : TerrariaPlugin
 	}
 	void Tile(object sender, IceWandEventArgs e)
 	{
-		if (e.Data >= 0 && e.Data < Main.maxTileSets)
+		if (e.Data >= 0 && e.Data < Terraria.ID.TileID.Count)
 		{
 			WorldGen.PlaceTile(e.X, e.Y, e.Data, true, true);
 			TSPlayer.All.SendTileSquareCentered(e.X, e.Y, 4);
@@ -200,7 +200,7 @@ public class IceWand : TerrariaPlugin
 	}
 	void Wall(object sender, IceWandEventArgs e)
 	{
-		if (e.Data > 0 && e.Data < Main.maxWallTypes)
+		if (e.Data > 0 && e.Data < Terraria.ID.WallID.Count)
 		{
 			WorldGen.PlaceWall(e.X, e.Y, e.Data, true);
 			TSPlayer.All.SendTileSquareCentered(e.X, e.Y, 1);
